@@ -21,7 +21,12 @@ $("#portfolio").click(function() {
 
 
 
-$("#contact").click(function() {
-    $("#rightPanel").html('')
+$("#github").click(function() {
+    window.location.href = "https://github.com/mbone1";
+})
+
+
+$("#linkedin").click(function() {
+    window.location.href = "https://www.linkedin.com/in/matthew-bonneville-944a431a9/";
 
 })
