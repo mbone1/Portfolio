@@ -49,11 +49,6 @@ body {
     letter-spacing: -1px;
 }
 
-.left p {
-    color: var(--textLight);
-    font-size: 1.15rem;
-}
-
 .right .title {
     font-weight: 800;
     letter-spacing: -1px;
@@ -66,6 +61,12 @@ body {
     font-size: 1.15rem;
 }
 
+.right .text {
+    font-weight: 400;
+    color: var(--textDark);
+    font-size: 1.50rem;
+}
+
 .right small {
     color: var(--textLight);
 }
@@ -74,4 +75,8 @@ body {
 .fas {
     color: var(--textLight);
     margin-right: 1rem;
+}
+
+.imgB {
+    border: 2px solid rgb(119, 122, 122, 0.5);
 }

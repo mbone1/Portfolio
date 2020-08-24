@@ -19,6 +19,10 @@ $("#portfolio").click(function() {
 
 })
 
+$("#contact").click(function() {
+    $("#rightPanel").html('')
+
+})
 
 
 $("#github").click(function() {
@@ -29,4 +33,11 @@ $("#github").click(function() {
 $("#linkedin").click(function() {
     window.location.href = "https://www.linkedin.com/in/matthew-bonneville-944a431a9/";
 
+})
+
+$("#paint").click(function() {
+    $("#img1").attr("src", "selfportrait.jpg")
+})
+$("#camera").click(function() {
+    $("#img1").attr("src", "portrait.jpg")
 })
