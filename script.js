@@ -1,37 +1,47 @@
 $("#about").click(function() {
-    $("#rightPanel").html('');
-    $("#rightPanel").append("<figure class=is-fullwidth id=holder>");
-    $("#holder").append("<img src=" + portrait + ">")
-    $("#holder").append("<p>" + textContent + "</p>")
-
-    // <figure class="is-fullwidth"> <img src="portrait.jpg " alt="Photograph of Matt Bonneville" />
-    // </figure>
-    // <p class="description">I'm Matt. I'm currently attending a coding boot-camp offered thru University of Arizona. I have a passion for problem solving and learning, I'm from California originally, but have lived in Arizona for most of my life. I've worked
-    //     in various customer service and management positions. Right now, I'm focused on learning.</p>
+    $("#portfolio1").addClass("is-hidden");
+    $("#contact1").addClass("is-hidden");
+    $("#about1").removeClass("is-hidden");
+    // $("#rightPanel").html('');
+    // $("#rightPanel").append("<figure class=is-fullwidth id=holder>");
+    // $("#holder").append("<img src=" + portrait + ">")
+    // $("#holder").append("<p>" + textContent + "</p>")
 
 })
-let portrait = "portrait.jpg"
-let textContent = "I'm Matt. I'm currently attending a coding boot-camp offered thru University of Arizona. I have a passion for problem solving and learning, I'm from California originally, but have lived in Arizona for most of my life. I've worked in various customer service and management positions. Right now, I'm focused on learning."
-
 
 $("#portfolio").click(function() {
-    $("#rightPanel").html('')
+    $("#contact1").addClass("is-hidden");
+    $("#about1").addClass("is-hidden");
+    $("#portfolio1").removeClass("is-hidden");
+
+
 
 })
 
 $("#contact").click(function() {
-    $("#rightPanel").html('')
+    $("#portfolio1").addClass("is-hidden");
+    $("#about1").addClass("is-hidden");
+    $("#contact1").removeClass("is-hidden");
 
 })
 
 
 $("#github").click(function() {
-    window.location.href = "https://github.com/mbone1";
+    window.location.href = "htps://github.com/mbone1";
+})
+
+$("#resume").click(function() {
+    window.location.href = "Resume-Matthew-Bonneville.pdf";
 })
 
 
 $("#linkedin").click(function() {
     window.location.href = "https://www.linkedin.com/in/matthew-bonneville-944a431a9/";
+
+})
+
+$("#email").click(function() {
+    window.location.href = "mailto: m.bonnev10@gmail.com";
 
 })
 
