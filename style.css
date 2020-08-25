@@ -5,9 +5,16 @@
     --textLight: hsla(0, 0%, 0%, 0.9);
 }
 
-body {
+.read {
+    font-size: 20px;
+}
+
+html {
     background-image: url("backsplash.jpg");
-    height: 150vh;
+}
+
+body {
+    /* height: 150vh; */
     color: var(--textDark);
 }
 
@@ -78,5 +85,5 @@ body {
 }
 
 .imgB {
-    border: 2px solid rgb(119, 122, 122, 0.5);
+    border: 0px solid rgb(119, 122, 122, 0.5);
 }

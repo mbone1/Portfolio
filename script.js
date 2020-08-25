@@ -27,27 +27,44 @@ $("#contact").click(function() {
 
 
 $("#github").click(function() {
-    window.location.href = "htps://github.com/mbone1";
-})
-
-$("#resume").click(function() {
-    window.location.href = "Resume-Matthew-Bonneville.pdf";
+    window.location.href = "http://github.com/mbone1";
 })
 
 
 $("#linkedin").click(function() {
-    window.location.href = "https://www.linkedin.com/in/matthew-bonneville-944a431a9/";
+    window.location.href = "http://www.linkedin.com/in/matthew-bonneville-944a431a9/";
+
+})
+$("#phone").click(function() {
+    $("#number").toggleClass("is-hidden");
 
 })
 
 $("#email").click(function() {
-    window.location.href = "mailto: m.bonnev10@gmail.com";
+    $("#address").toggleClass("is-hidden");
+
+})
+$("#resume").click(function() {
+    $("#linkresume").toggleClass("is-hidden");
+
+})
+
+$("#weather").click(function() {
+    $("#wdb").toggleClass("is-hidden");
+
+})
+$("#geo").click(function() {
+    $("#egt").toggleClass("is-hidden");
+
+})
+$("#scheduler").click(function() {
+    $("#wds").toggleClass("is-hidden");
 
 })
 
 $("#paint").click(function() {
-    $("#img1").attr("src", "selfportrait.jpg")
+    $("#img2").attr("src", "selfportrait.jpg")
 })
 $("#camera").click(function() {
-    $("#img1").attr("src", "portrait.jpg")
+    $("#img2").attr("src", "portrait.jpg")
 })
