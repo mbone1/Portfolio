@@ -4,7 +4,7 @@ import "./style.css";
 import Draggable, { DraggableCore } from "react-draggable";import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
-// import About from "./components/About";
+import About from "./components/About";
 import LinkedInButton from "./components/LinkedInButton";
 import GithubButton from "./components/GithubButton";
 
@@ -94,10 +94,10 @@ class App extends Component {
     );
   }
 }
+export default App;
 
        
              
-export default App;
                   
                   
                   
