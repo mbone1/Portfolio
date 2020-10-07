@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import "./App.css";
 import "./style.css";
-import Draggable, { DraggableCore } from "react-draggable";import About from "./components/About";
+import Draggable, { DraggableCore } from "react-draggable";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import About from "./components/About";
