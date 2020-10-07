@@ -2,9 +2,9 @@ import React, { Component } from "react";
 // import "./App.css";
 import "./style.css";
 import Draggable, { DraggableCore } from "react-draggable";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact.js";
+import About from "./components/About.js";
+import Portfolio from "./components/Portfolio.js";
 import LinkedInButton from "./components/LinkedInButton";
 import GithubButton from "./components/GithubButton";
 
