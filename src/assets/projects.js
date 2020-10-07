@@ -38,7 +38,7 @@ const projects = [
   {
     name: "Employee Organizer",
     url: "https://github.com/mbone1/employee-organizer",
-    deployedUrl: "",
+    deployedUrl: null,
     description: "",
     screenshot: "",
   },

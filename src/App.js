@@ -1,16 +1,9 @@
 import React, { Component } from "react";
-import "./App.css";
+// import "./App.css";
 import "./style.css";
-import selfportrait from "./assets/selfportrait.jpg";
-import Draggable, { DraggableCore } from "react-draggable";
-import aboutButton from "./components/aboutButton";
-import portfolioButton from "./components/portfolioButton";
-import contactButton from "./components/contactButton";
-import About from "./components/About";
+import Draggable, { DraggableCore } from "react-draggable";import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
-import portrait from "./assets/portrait.jpg";
-import projects from "./assets/projects.js";
 import LinkedInButton from "./components/LinkedInButton";
 import GithubButton from "./components/GithubButton";
 
@@ -34,7 +27,9 @@ class App extends Component {
             <div className="column is-8 is-offset-2 register">
               <div className="columns">
                 <div className="column left">
-                  <h2 className="title is-1">Matt Bonneville</h2>
+                  <DraggableCore>
+                    <h2 className="title is-1">Matt Bonneville</h2>
+                  </DraggableCore>
                   <Draggable>
                     <button
                       className="button is-block is-outlined is-dark is-fullwidth is-light"
@@ -46,13 +41,13 @@ class App extends Component {
                           showPortfolio: false,
                         });
                       }}>
-                      {this.state.show ? "About" : "About"}
+                      {this.state.show ? "about" : "about"}
                     </button>
                   </Draggable>
                   <Draggable>
                     <button
                       className="button is-block is-outlined is-dark is-fullwidth is-light"
-                      id="about"
+                      id="portfolio"
                       onClick={() => {
                         this.setState({
                           showPortfolio: !this.state.showPortfolio,
@@ -60,7 +55,7 @@ class App extends Component {
                           showAbout: false,
                         });
                       }}>
-                      {this.state.show ? "Portfolio" : "Portfolio"}
+                      {this.state.show ? "portfolio" : "portfolio"}
                     </button>
                   </Draggable>
                   <Draggable>
@@ -74,35 +69,22 @@ class App extends Component {
                           showPortfolio: false,
                         });
                       }}>
-                      {this.state.showContact ? "Contact" : "Contact"}
+                      {this.state.showContact ? "contact" : "contact"}
                     </button>
                   </Draggable>
-                  <Draggable>
-                      <GithubButton />
-                  </Draggable>
-                  <Draggable>
-                    <LinkedInButton             />
-                  </Draggable>
+                    <GithubButton />
+                  <LinkedInButton />
                 </div>
                 <div className="column right has-text-centered" id="rightPanel">
-                  {/* <!-- beginning of portfolio page --> */}
-
-                  {this.state.showPortfolio ? (
-                    <div id="portfolio1">
-                      <div></div>
-                    </div>
-                  ) : null}
-
-                  {/* <!-- end of portfolio page -->
-                        <!-- beginning of contact page --> */}
-
-                  {this.state.showContact ? <Contact /> : null}
-
-                  {/* <!-- end of contact page --> */}
-
                   {/* <!-- beginning of about page --> */}
                   {this.state.showAbout ? <About /> : null}
-                  {/* <!-- end of about page --> */}
+                  {/* <!-- end of about page -->
+                        <!-- beginning of contact page --> */}
+                  {this.state.showContact ? <Contact /> : null}
+                  {/* <!-- end of contact page --> */}
+                  {/* <!-- beginning of portfolio page --> */}
+                  {this.state.showPortfolio ? <Portfolio /> : null}
+                  {/* <!-- end of portfolio page --> */}
                 </div>
               </div>
             </div>
@@ -112,8 +94,19 @@ class App extends Component {
     );
   }
 }
-
+       
+             
 export default App;
+                  
+                  
+                  
+          
+
+
+
+
+
+
                   
                   
                  

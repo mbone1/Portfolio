@@ -10,7 +10,7 @@ export default function Contact() {
         ‪(814)503-0343
       </p>
       <button
-        className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-envelope mt-5"
+        className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-envelope mt-5 text address"
         id="email"></button>
       <p className="text " id="address">
         m.bonnev10@gmail.com
@@ -18,9 +18,9 @@ export default function Contact() {
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-file mt-5"
         id="resume"></button>
-      <a className="text " id="linkresume" href="Resume-Matthew-Bonneville.pdf">
+      <p className="text " id="linkresume">
         Resume
-      </a>
+      </p>
     </div>
   );
 }
