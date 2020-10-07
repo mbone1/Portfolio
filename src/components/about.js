@@ -2,7 +2,7 @@ import React from "react";
 import Draggable from "react-draggable";
 import portrait from "../assets/portrait.jpg";
 
-export default function Contact() {
+export default function About() {
   return (
     <div id="about1">
       <figure className="is-fullwidth">
