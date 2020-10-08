@@ -13,7 +13,7 @@ export default function Contact() {
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-envelope mt-5 text address"
         id="email"></button>
-      <a email="m.bonnev10@gmail.com">m.bonnev10@gmail.com</a>
+      <p email="m.bonnev10@gmail.com">m.bonnev10@gmail.com</p>
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-file mt-5"
         id="resume"></button>
