@@ -1,4 +1,5 @@
 import React from "react";
+import resume from "../assets/resume.pdf";
 
 export default function Contact() {
   return (
@@ -12,15 +13,13 @@ export default function Contact() {
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-envelope mt-5 text address"
         id="email"></button>
-      <p className="text " id="address">
-        m.bonnev10@gmail.com
-      </p>
+      <a email="m.bonnev10@gmail.com">m.bonnev10@gmail.com</a>
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-file mt-5"
         id="resume"></button>
-      <p className="text " id="linkresume">
+      <a className="text " href={resume} download id="linkresume">
         Resume
-      </p>
+      </a>
     </div>
   );
 }

@@ -20,12 +20,8 @@ export default function About() {
         <p className="description">
           <strong>
             {" "}
-            I'm Matt. Currently I'm attending a coding boot-camp offered thru
-            University of Arizona. I have a passion for problem solving and
-            learning, I'm from California originally, but have lived in Arizona
-            for most of my life. I've worked in various customer service and
-            management positions. In my free time I drink tea, cook, and ride my
-            bike. Right now, I'm excited to learn more about programming.
+            I'm Matt. I like tea, video games and problem solving. I'm currently
+            attending a coding boot-camp offered thru U of A.
           </strong>
         </p>
       </Draggable>
