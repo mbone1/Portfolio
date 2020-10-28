@@ -7,7 +7,7 @@ import About from "./components/About.js";
 import Portfolio from "./components/Portfolio.js";
 import LinkedInButton from "./components/LinkedInButton";
 import GithubButton from "./components/GithubButton";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 

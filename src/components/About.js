@@ -1,13 +1,25 @@
 import React from "react";
 import Draggable from "react-draggable";
 import portrait from "../assets/portrait.jpg";
+import { useSpring, animated, useTrail } from "react-spring";
+
 
 export default function About() {
+//   const fadeIn = useSpring({
+//   opacity: 1,
+//   from: { opacity: 0 },
+// })
+  
+  const [trail, set] = useTrail(1, () => ({ opacity: 0 }))
+  set({ opacity: 1 })
+  // stop()
+
   return (
-    <div id="about1">
-      <figure className="is-fullwidth">
+    trail.map(props =>
+    <animated.div id="about1">
+      <animated.figure className="is-fullwidth">
         <Draggable>
-          <img id="img2" src={portrait} alt="Photograph of Matt Bonneville " />
+            <animated.img style={props} id="img2" src={portrait} alt="Photograph of Matt Bonneville " />
         </Draggable>
         {/* <button
                           className="button is-outlined is-dark is-light fas fa-paint-brush"
@@ -15,16 +27,17 @@ export default function About() {
                         <button
                           className="button is-outlined is-dark is-light fas fa-camera-retro"
                           id="camera"></button> */}
-      </figure>
+      </animated.figure>
       <Draggable>
-        <p className="description">
+        <animated.p style={props} className="description">
           <strong>
             {" "}
-            I'm Matt. I like tea, video games and problem solving. I'm currently
-            attending a coding boot-camp offered thru U of A.
+            I'm Matt. I like tea, video games and problem solving. I'm a graduate of University of Arizona's full stack web development bootcamp.
           </strong>
-        </p>
+        </animated.p>
       </Draggable>
-    </div>
+    </animated.div>
+  )
+   
   );
 }
