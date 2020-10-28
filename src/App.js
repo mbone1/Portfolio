@@ -7,6 +7,7 @@ import About from "./components/About.js";
 import Portfolio from "./components/Portfolio.js";
 import LinkedInButton from "./components/LinkedInButton";
 import GithubButton from "./components/GithubButton";
+import { Link } from "react-router-dom";
 
 
 
@@ -72,8 +73,11 @@ class App extends Component {
                       {this.state.showContact ? "contact" : "contact"}
                     </button>
                   </Draggable>
-                    <GithubButton />
-                  <LinkedInButton />
+                  <GithubButton />
+                  
+                    {" "}
+                    <LinkedInButton />{" "}
+                
                 </div>
                 <div className="column right has-text-centered" id="rightPanel">
                   {/* <!-- beginning of about page --> */}
