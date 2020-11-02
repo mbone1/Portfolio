@@ -1,25 +1,25 @@
 import React from "react";
 import Draggable from "react-draggable";
 import portrait from "../assets/portrait.jpg";
-import { useSpring, animated, useTrail } from "react-spring";
+import { useSpring, animated } from "react-spring";
 
 
 export default function About() {
-//   const fadeIn = useSpring({
-//   opacity: 1,
-//   from: { opacity: 0 },
-// })
+  const fadeIn = useSpring({
+  opacity: 1,
+  from: { opacity: 0 },
+})
   
-  const [trail, set] = useTrail(1, () => ({ opacity: 0 }))
-  set({ opacity: 1 })
-  // stop()
+  // const [trail, set] = useTrail(1, () => ({ opacity: 0 }))
+  // set({ opacity: 1 })
+  // // stop()
 
   return (
-    trail.map(props =>
+    
     <animated.div id="about1">
       <animated.figure className="is-fullwidth">
         <Draggable>
-            <animated.img style={props} id="img2" src={portrait} alt="Photograph of Matt Bonneville " />
+            <animated.img style={fadeIn} id="img2" src={portrait} alt="Photograph of Matt Bonneville " />
         </Draggable>
         {/* <button
                           className="button is-outlined is-dark is-light fas fa-paint-brush"
@@ -29,7 +29,7 @@ export default function About() {
                           id="camera"></button> */}
       </animated.figure>
       <Draggable>
-        <animated.p style={props} className="description">
+        <animated.p style={fadeIn} className="description">
           <strong>
             {" "}
             I'm Matt. I like tea, video games and problem solving. I'm a graduate of University of Arizona's full stack web development bootcamp.
@@ -37,7 +37,7 @@ export default function About() {
         </animated.p>
       </Draggable>
     </animated.div>
-  )
+  
    
   );
 }

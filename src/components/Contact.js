@@ -4,9 +4,11 @@ import resume from "../assets/resume.pdf";
 export default function Contact() {
   return (
     <div id="contact1">
-      <button
-        className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-phone mt-5"
-        id="phone"></button>
+      
+        <button
+          className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-phone mt-5"
+          id="phone"></button>
+    
       <p className="text " id="number">
         ‪(814)503-0343
       </p>

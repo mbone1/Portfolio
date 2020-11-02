@@ -79,7 +79,7 @@ class App extends Component {
                     <LinkedInButton />{" "}
                 
                 </div>
-                <div className="column right has-text-centered" id="rightPanel">
+                <div className="column right has-text-centered scroll scroller" id="rightPanel scroller">
                   {/* <!-- beginning of about page --> */}
                   {this.state.showAbout ? <About /> : null}
                   {/* <!-- end of about page -->
