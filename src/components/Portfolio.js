@@ -1,16 +1,28 @@
 import React from "react";
 import projects from "../assets/projects.js";
+import { useSpring, animated } from "react-spring";
+
 
 export default function Portfolio() {
+const fadeIn = useSpring({
+  opacity: 1,
+  from: { opacity: 0 },
+});
+
+
   return (
     <div>
       {projects.map((project) => (
         <>
           <strong className="read">
-            <p>{project.name}</p>
-            <a href={project.url}>Github Link</a>
+            <animated.p style={fadeIn} >{project.name}</animated.p>
+            <animated.a style={fadeIn} href={project.url}>
+              Github Link
+            </animated.a>
             <br></br>
-            <a href={project.deployedUrl}>Deployed Application</a>
+            <animated.a style={fadeIn} href={project.deployedUrl}>
+              Deployed Application
+            </animated.a>
           </strong>
         </>
       ))}

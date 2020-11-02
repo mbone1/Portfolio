@@ -10,10 +10,6 @@ export default function About() {
   from: { opacity: 0 },
 })
   
-  // const [trail, set] = useTrail(1, () => ({ opacity: 0 }))
-  // set({ opacity: 1 })
-  // // stop()
-
   return (
     
     <animated.div id="about1">

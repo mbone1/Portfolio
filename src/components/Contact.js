@@ -1,27 +1,49 @@
 import React from "react";
 import resume from "../assets/resume.pdf";
+import { useSpring, animated } from "react-spring";
 
 export default function Contact() {
+
+  const fadeIn = useSpring({
+  opacity: 1,
+  from: { opacity: 0 },
+});
+
   return (
     <div id="contact1">
-      
-        <button
+      <button
+        style={fadeIn}
           className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-phone mt-5"
-          id="phone"></button>
-    
-      <p className="text " id="number">
+        id="phone">
+          </button>
+      <animated.p
+        style={fadeIn}
+        className="text "
+        id="number">
         ‪(814)503-0343
-      </p>
+      </animated.p>
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-envelope mt-5 text address"
-        id="email"></button>
-      <p email="m.bonnev10@gmail.com">m.bonnev10@gmail.com</p>
+        id="email">
+        </button>
+      <animated.p email="m.bonnev10@gmail.com"
+        style={fadeIn}
+        className="text"
+      >m.bonnev10@gmail.com</animated.p>
       <button
         className="button is-block is-fullwidth is-outlined is-dark is-light fas fa-file mt-5"
         id="resume"></button>
-      <a className="text " href={resume} download id="linkresume">
+      <animated.a
+        style={fadeIn}
+        className="text"
+        href={resume}
+        download id="linkresume">
         Resume
-      </a>
+      </animated.a>
     </div>
   );
 }
+      
+        
+    
+       
