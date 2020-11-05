@@ -16,6 +16,7 @@ const fadeIn = useSpring({
       {projects.map((project) => (
         <>
           <strong className="read">
+            {/* <hr></hr> */}
             <animated.p className="pTitle" style={fadeIn}>
               {project.name}
             </animated.p>
@@ -23,7 +24,7 @@ const fadeIn = useSpring({
             <animated.img
               style={fadeIn}
               src={project.screenshot}
-              alt="l-plan"
+              alt={project.name}
               border="0"
             />
             <animated.div style={fadeIn} className="limitWidth">
@@ -47,7 +48,6 @@ const fadeIn = useSpring({
                   id="github"></button>
               </a>
             </animated.div>
-            <hr></hr>
           </strong>
         </>
       ))}

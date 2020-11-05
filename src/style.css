@@ -10,6 +10,12 @@
     text-align: center;
 }
 
+hr {
+    background-color: rgb(119, 122, 122, 1.0);
+    height: 2px;
+    border: 0;
+}
+
 html {
     background-image: url("./assets/backsplash.jpg");
 }
@@ -109,10 +115,10 @@ body {
 
 div.limitWidth {
     max-width: 350px;
-    border: 1px solid rgb(119, 122, 122, 0.5);
+    border: 1px solid rgb(119, 122, 122, 0.6);
     margin: auto;
     /* background-color: red; */
-    background: rgb(119, 122, 122, 0.3);
+    background: rgb(119, 122, 122, 0.4);
 }
 
 .pTitle {
@@ -121,28 +127,4 @@ div.limitWidth {
 
 .description {
     opacity: 1;
-}
-
-a:link {
-    color: green;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-a:visited {
-    color: White;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-a:hover {
-    color: White;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
 }
