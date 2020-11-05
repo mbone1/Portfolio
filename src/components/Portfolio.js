@@ -1,6 +1,7 @@
 import React from "react";
 import projects from "../assets/projects.js";
 import { useSpring, animated } from "react-spring";
+import "../style.css"
 
 
 export default function Portfolio() {
@@ -15,27 +16,41 @@ const fadeIn = useSpring({
       {projects.map((project) => (
         <>
           <strong className="read">
-            <animated.p style={fadeIn} >{project.name}</animated.p>
-            <animated.a style={fadeIn} href={project.url}>
-              Github Link
-            </animated.a>
-            <br></br>
-            <animated.a style={fadeIn} href={project.deployedUrl}>
-              Deployed Application
-            </animated.a>
+            <animated.p className="pTitle" style={fadeIn}>
+              {project.name}
+            </animated.p>
+
+            <animated.img
+              style={fadeIn}
+              src={project.screenshot}
+              alt="l-plan"
+              border="0"
+            />
+            <animated.div style={fadeIn} className="limitWidth">
+              <animated.span className="description">
+                {project.description}
+              </animated.span>
+              <br></br>
+              {/* <animated.button
+                className="button is-block is-outlined is-dark is-fullwidth is-light fab fa-github"
+                style={fadeIn}
+                href={project.url}></animated.button> */}
+              <a href={project.url}>
+                <button
+                  className="button is-outlined is-dark is-fullwidth is-light fab fa-github"
+                  id="github"
+                  style={fadeIn}></button>
+              </a>
+              <a href={project.deployedUrl}>
+                <button
+                  className="button is-outlined is-dark is-fullwidth is-light fas fa-external-link-square-alt"
+                  id="github"></button>
+              </a>
+            </animated.div>
+            <hr></hr>
           </strong>
         </>
       ))}
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
-      <p>asdfa</p>
     </div>
   );
 }

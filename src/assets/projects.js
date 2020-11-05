@@ -1,5 +1,13 @@
 const projects = [
   {
+    name: "L-Plan",
+    url: "https://github.com/scottdouglas238/Lesson_Planner",
+    deployedUrl: "https://sheltered-hollows-22179.herokuapp.com/",
+    description:
+      "An application designed for teachers to create, delete and modify lesson plans, as well as view lesson plans from within their department. Only accessible with a login (please feel free to make one to check out capabilities.) Uses MERN stack.",
+    screenshot: "https://i.ibb.co/YkHrvsK/l-plan.jpg",
+  },
+  {
     name: "React-Employee-Database",
     url: "https://github.com/mbone1/React-Employee-Database",
     deployedUrl: "https://react-employee-db.netlify.app/",

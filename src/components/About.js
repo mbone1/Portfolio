@@ -25,12 +25,14 @@ export default function About() {
                           id="camera"></button> */}
       </animated.figure>
       <Draggable>
+        <div className="limitWidth">
         <animated.p style={fadeIn} className="description">
           <strong>
             {" "}
             I'm Matt. I like tea, video games and problem solving. I'm a graduate of University of Arizona's full stack web development bootcamp.
           </strong>
-        </animated.p>
+          </animated.p>
+          </div>
       </Draggable>
     </animated.div>
   

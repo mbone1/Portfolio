@@ -7,6 +7,7 @@
 
 .read {
     font-size: 20px;
+    text-align: center;
 }
 
 html {
@@ -104,4 +105,44 @@ body {
 .scroller::-webkit-scrollbar-thumb {
     background-color: #858a81;
     border-radius: 20px;
+}
+
+div.limitWidth {
+    max-width: 350px;
+    border: 1px solid rgb(119, 122, 122, 0.5);
+    margin: auto;
+    /* background-color: red; */
+    background: rgb(119, 122, 122, 0.3);
+}
+
+.pTitle {
+    font-size: 150%;
+}
+
+.description {
+    opacity: 1;
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: White;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: White;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
 }
