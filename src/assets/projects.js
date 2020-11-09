@@ -11,15 +11,16 @@ const projects = [
     name: "React-Employee-Database",
     url: "https://github.com/mbone1/React-Employee-Database",
     deployedUrl: "https://react-employee-db.netlify.app/",
-    description: "",
-    screenshot: "",
+    description:
+      "A mock-up of a simple employee database. Allows users to sort by name, role or email.",
+    screenshot: "https://i.ibb.co/J3LNwVV/reactemployee.jpg",
   },
   {
     name: "Progressive Budget",
     url: "https://github.com/mbone1/Online-Offline-Budget-Tracker",
     deployedUrl: "https://gentle-falls-82429.herokuapp.com/",
-    description: "",
-    screenshot: "",
+    description: "Straightforward and slim budget app designed to work both online AND offline!",
+    screenshot: "https://i.ibb.co/6Wv0HKG/onlineoffline.jpg",
   },
   {
     name: "Fitness Tracker",
