@@ -4,7 +4,7 @@ const projects = [
     url: "https://github.com/scottdouglas238/Lesson_Planner",
     deployedUrl: "https://sheltered-hollows-22179.herokuapp.com/",
     description:
-      "An application designed for teachers to create, delete and modify lesson plans, as well as view lesson plans from within their department. Only accessible with a login (please feel free to make one to check out capabilities.) Uses MERN stack.",
+      "An application designed for teachers to create, delete and modify lesson plans, as well as view lesson plans from within their department. Site is restricted to registered users only. Uses MERN stack.",
     screenshot: "https://i.ibb.co/YkHrvsK/l-plan.jpg",
   },
   {
@@ -36,23 +36,26 @@ const projects = [
     name: "Albuy Marketplace",
     url: "https://github.com/mbone1/Albuy-Marketplace",
     deployedUrl: "https://fathomless-eyrie-52685.herokuapp.com/",
-    description: "An marketplace-lite app for buying and selling vinyl albums. Uses Spotify's API for search function. Technologies used include: Node, Express, Handlebars.js, MySQL w/ Sequelize.",
+    description:
+      "An marketplace app for buying and selling vinyl albums. Uses Spotify's API for search functionality. Technologies used include: Node, Express, Handlebars.js, MySQL w/ Sequelize.",
     screenshot: "https://i.ibb.co/pzwwG5p/albuymarketplace.jpg",
   },
   {
     name: "Eatdaburrito",
     url: "https://github.com/mbone1/eatdaburrito",
     deployedUrl: "https://safe-garden-94512.herokuapp.com/",
-    description: "",
-    screenshot: "",
-  },
-  {
-    name: "Employee Organizer",
-    url: "https://github.com/mbone1/employee-organizer",
-    deployedUrl: null,
-    description: "",
-    screenshot: "",
-  },
+    description:
+      "Simple app built with handlebars. Allows users to add burritos to one of two pre-defined categories, then switch categories of said burritos on the fly.",
+    screenshot: "https://i.ibb.co/GWWQdKL/burrito.jpg",
+  }
+  //not a deployable app
+  // {
+  //   name: "Employee Organizer",
+  //   url: "https://github.com/mbone1/employee-organizer",
+  //   deployedUrl: null,
+  //   description: "",
+  //   screenshot: "",
+  // },
 ];
 
 export default projects;
