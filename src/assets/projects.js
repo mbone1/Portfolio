@@ -19,7 +19,7 @@ const projects = [
     name: "Progressive Budget",
     url: "https://github.com/mbone1/Online-Offline-Budget-Tracker",
     deployedUrl: "https://gentle-falls-82429.herokuapp.com/",
-    description: "Straightforward and slim budget app designed to work both online AND offline!",
+    description: "Straightforward and slim budget app, allows users to enter deposits and withdrawals with a running total. A fully progressive app that works both on and offline.",
     screenshot: "https://i.ibb.co/6Wv0HKG/onlineoffline.jpg",
   },
   {
