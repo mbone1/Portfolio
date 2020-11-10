@@ -37,7 +37,7 @@ const projects = [
     url: "https://github.com/mbone1/Albuy-Marketplace",
     deployedUrl: "https://fathomless-eyrie-52685.herokuapp.com/",
     description:
-      "An marketplace app for buying and selling vinyl albums. Uses Spotify's API for search functionality. Technologies used include: Node, Express, Handlebars.js, MySQL w/ Sequelize.",
+      "A marketplace app for buying and selling vinyl albums. Uses Spotify's API for search functionality. Technologies used include: Node, Express, Handlebars.js, MySQL w/ Sequelize.",
     screenshot: "https://i.ibb.co/pzwwG5p/albuymarketplace.jpg",
   },
   {
