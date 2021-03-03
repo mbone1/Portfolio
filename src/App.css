@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,133 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.name {
+    position: fixed;
+    top: 6vh;
+    /* right: 10vw; */
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 3vh;
+    text-transform: uppercase;
+    color: #836c57;
+    text-shadow: 0px 0px 8px #faf5f0;
+    animation: blinkin 10s ease-in-out
+    /* text-shadow: 1px 2px 2px #e7ded6; */
+}
+
+.info {
+    /* opacity: 1; */
+    animation: fadein .6s ease-in-out;
+}
+
+
+/* .buttonContainer {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+} */
+
+.startBtn {
+    margin: 0 auto;
+    position: fixed;
+    top: 13vh;
+    left: 20vw;
+    width: 3vw;
+    height: 3.5%;
+    text-shadow: 0px 0px 8px #faf5f0;
+    background-color: #030303;
+    border: 0px solid white;
+    color: #836c57;
+    text-transform: uppercase;
+    animation: blinkin 7s ease-in-out
+}
+
+.startBtn2 {
+    position: fixed;
+    top: 13vh;
+    right: 20vw;
+    width: 3vw;
+    height: 3.5%;
+    background-color: #030303;
+    text-shadow: 0px 0px 8px #faf5f0;
+    border: 0px solid white;
+    color: #836c57;
+    text-transform: uppercase;
+    animation: blinkin 7s ease-in-out
+}
+
+.infoBox {
+    position: fixed;
+    color: white;
+    min-height: 40vh;
+    border: 1px solid grey;
+    width: 95%;
+    max-width: 1000px;
+    top: 29vh;
+    background: rgb(119, 122, 122, 0.1);
+    z-index: 1;
+    animation: expand .8s ease-in-out;
+}
+
+.infoBox {
+    transition: all .7s ease-in-out;
+    text-transform: uppercase
+}
+
+
+/* .infoBox:hover {
+    
+    transform: scale(.45, 2)
+
+} */
+
+@keyframes expand {
+    0% {
+        transform: scale(.001, .001)
+    }
+    50% {
+        transform: scale(.8, .05)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
+
+@keyframes blinkin {
+    0% {
+        text-shadow: 0px 0px 0px #faf5f0;
+    }
+    50% {
+        text-shadow: 0px 0px 4px #faf5f0;
+    }
+    100% {
+        text-shadow: 0px 0px 10px #faf5f0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: .5
+    }
+    100% {
+        opacity: 1
+    }
 }
