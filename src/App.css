@@ -105,6 +105,48 @@
     animation: blinkin 7s ease-in-out
 }
 
+.portfolio {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "picture-area picture-area picture-area description" "picture-area picture-area picture-area description" "picture-area picture-area picture-area description" "bottom bottom bottom bottom" "bottom bottom bottom bottom";
+    /* justify-content: ; */
+}
+
+.picture-area {
+    grid-area: picture-area;
+}
+
+.description {
+    grid-area: description;
+}
+
+.bottom {
+    grid-area: bottom;
+}
+
+
+/* .screenshotBox {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.bottom {
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.description {
+    grid-area: 1 / 2 / 2 / 4;
+} */
+
+.screenshot {
+    align-self: start;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 3px;
+}
+
 .infoBox {
     position: fixed;
     color: white;

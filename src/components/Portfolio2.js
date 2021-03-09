@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import projects from "../assets/projects.js";
 
 export default function Portfolio2() {
-    let [project, setProject] = useState(1);
+    let [project, setProject] = useState(0);
 
     function incrementer(value, limiter) {
         if (value === (limiter.length - 1)) {
@@ -22,29 +22,25 @@ export default function Portfolio2() {
 
     return (
         <>
-            {/* {projects.map((project) => (
-                <>
-                    <img
-                        src={project.screenshot}
-                        alt={project.name} />
-                </>
-            ))}
-                 */}
             <div className='portfolio'>
-                <div className='portfolioLeft'>
+                <div className='picture-area'>
                     {/* left side - image */}
-                    <img />
+                    <img className='screenshot'src={projects[project].screenshot} />
+                 </div>
+                <div className='description'>
+                    {projects[project].name}
+                    {project}
+                   
+
+                </div>
                     
+                <div className='bottom'>
                     <button
                         onClick={() => decrementer(project, projects)}>previous</button>
                     <button
                         onClick={() => incrementer(project, projects)}>next</button>
-                 </div>
-                <div className='portfolioRight'>
                     {/* right side - project info */}
-                    {projects[project].name}
                     <br></br>
-                    {project}
                  </div>
                 
             </div>

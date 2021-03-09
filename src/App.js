@@ -9,6 +9,7 @@ import Draggable, { DraggableCore } from "react-draggable";
 import P5Wrapper from "react-p5-wrapper";
 import sketch from "./components/sketch.js";
 import "./App.css";
+import Sketch2 from './components/sketch2.js'
 
 
 export default function App() {
@@ -25,10 +26,12 @@ export default function App() {
     info = (
       <div className="infoBox">
         <span className="info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Necessitatibus accusamus maiores quidem at aut, quo repudiandae
           corporis dolor quia deserunt accusantium nobis molestiae dignissimos,
-          error, saepe tempore deleniti corrupti obcaecati?
+          error, saepe tempore deleniti corrupti obcaecati? */}
+
+          <P5Wrapper sketch={Sketch2}/>
         </span>
       </div>
     );
