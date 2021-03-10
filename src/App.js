@@ -10,6 +10,7 @@ import P5Wrapper from "react-p5-wrapper";
 import sketch from "./components/sketch.js";
 import "./App.css";
 import Sketch2 from './components/sketch2.js'
+import ThreeScene from './components/cube2.js'
 
 
 export default function App() {
@@ -26,12 +27,8 @@ export default function App() {
     info = (
       <div className="infoBox">
         <span className="info">
-          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus accusamus maiores quidem at aut, quo repudiandae
-          corporis dolor quia deserunt accusantium nobis molestiae dignissimos,
-          error, saepe tempore deleniti corrupti obcaecati? */}
-
-          <P5Wrapper sketch={Sketch2}/>
+          <ThreeScene />
+          
         </span>
       </div>
     );
@@ -61,61 +58,6 @@ export default function App() {
           {info}
       </div>
     </>
-
-    // <div className="App">
-    //   <section className="container">
-    //     <div className="columns is-multiline is-flex-mobile">
-    //       <div className="column is-8 is-offset-2 register">
-    //         <div className="columns">
-    //           <div className="column left">
-    //             <DraggableCore>
-    //               <h2 className="title is-1">Matt Bonneville</h2>
-    //             </DraggableCore>
-    //             <Draggable>
-    //               <button
-    //                 className="button is-block is-outlined is-dark is-fullwidth is-light"
-    //                 id="about"
-    //                 onClick={() => {
-    //                   setDisplay("about");
-    //                 }}>
-    //                 about
-    //               </button>
-    //             </Draggable>
-    //             <Draggable>
-    //               <button
-    //                 className="button is-block is-outlined is-dark is-fullwidth is-light"
-    //                 id="portfolio"
-    //                 onClick={() => {
-    //                   setDisplay("portfolio");
-    //                 }}>
-    //                 portfolio
-    //               </button>
-    //             </Draggable>
-    //             <Draggable>
-    //               <button
-    //                 className="button is-block is-outlined is-dark is-fullwidth is-light"
-    //                 id="contact"
-    //                 onClick={() => {
-    //                   setDisplay("contact");
-    //                 }}>
-    //                 contact
-    //               </button>
-    //             </Draggable>
-    //             <GithubButton /> <LinkedInButton />{" "}
-    //           </div>
-
-    //           <div
-    //             className="column right has-text-centered scroll scroller"
-    //             id="rightPanel scroller">
-    //             {display === "about" ? <About /> : null}
-    //             {display === "contact" ? <Contact /> : null}
-    //             {display === "portfolio" ? <Portfolio /> : null}
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </section>
-    // </div>
   );
 }
 
