@@ -1,4 +1,4 @@
-import PictureFrame from "../assets/pictureframe2.obj";
+// import PictureFrame from "../assets/pictureframe2.obj";
 
 
 export default function sketch2(p) {
@@ -6,7 +6,7 @@ export default function sketch2(p) {
     let pic;
     let texture
     p.preload = function () {
-        pic = p.loadModel(PictureFrame);
+        pic = p.loadModel();
 
     };
   p.setup = function () {

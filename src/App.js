@@ -13,9 +13,11 @@ import Sketch2 from './components/sketch2.js'
 import ThreeScene from './components/cube2.js'
 
 
+
 export default function App() {
   const [display, setDisplay] = useState("none");
   //will handle state of side panel, about/contact/portfolio'
+
 
   function handleClick(pass) {
     setDisplay(pass)

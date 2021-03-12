@@ -11,13 +11,6 @@ var usersRouter = require('./routes/users');
 var NASA= require('./routes/NASA')
 
 var app = express();
-// var server = http.createServer();
-// app.listen();
-// server.listen(3000)
-// console.log('express server started on port', server.address)
-// console.log("Express server listening on port %d", app.address().port)
-// view engine setup
-//dfasdfas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 

@@ -2,12 +2,38 @@ import React, { Component } from "react";
 import * as THREE from "three";
 import { MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import OrbitControls from "three-orbitcontrols";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { Scene } from "three";
+// import '../../api/3d/laptop'
+import laptop from './laptopweather.glb';
 
+
+// for tomorrow...  start work on importing to front end with tut on react-three-fiber
 class ThreeScene extends Component {
-  componentDidMount() {
+  componentDidMount = () => {
+    this.loader = new GLTFLoader();
+    this.scene = new THREE.Scene();
+
+    this.loader.load(
+      // "../../api/3d/laptopweather.glb",
+      // "./laptopweather.glb",
+      // "./laptopweather.glb",
+      laptop,
+      function (gltf) {
+        // this.gltf = gltf.scene
+        this.scene.add(gltf.scene);
+        // console.log(this.gltf);
+      },
+      function (xhr) {
+        console.log((xhr.loaded + xhr.total) * 100 + "%loaded");
+      },
+      function (error) {
+        console.log(error);
+      }
+    );
+
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
-    this.scene = new THREE.Scene();
     //Add Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setClearColor("#999199");
@@ -27,11 +53,11 @@ class ThreeScene extends Component {
     lights[0].position.set(0, 200, 0);
     lights[1].position.set(100, 200, 100);
     lights[2].position.set(-100, -200, -100);
-    this.scene.add(lights[0]);
-    this.scene.add(lights[1]);
-    this.scene.add(lights[2]);
+    // this.scene.add(lights[0]);
+    // this.scene.add(lights[1]);
+    // this.scene.add(lights[2]);
     //ADD Your 3D Models here
-    
+
     this.renderScene();
     //start animation
     this.start();
@@ -50,6 +76,14 @@ class ThreeScene extends Component {
     this.renderScene();
     this.frameId = window.requestAnimationFrame(this.animate);
   };
+  
+  // updateSetState = () => {
+  //   if (this.gltf !== undefined) {
+  //     console.log("spongus")
+  //   }
+  // };
+      
+
   renderScene = () => {
     if (this.renderer) this.renderer.render(this.scene, this.camera);
   };
@@ -57,7 +91,7 @@ class ThreeScene extends Component {
   render() {
     return (
       <div
-        style={{ width: "800px", height: "800px" }}
+        style={{ width: "300px", height: "300px" }}
         ref={(mount) => {
           this.mount = mount;
         }}
