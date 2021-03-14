@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(173, 59, 6);
+}
+
+.i {
+    animation: expand .8s ease-in-out;
+}
+
+
+/* animations */
+
+@keyframes expand {
+    0% {
+        transform: scale(.001, .001)
+    }
+    50% {
+        transform: scale(.8, .05)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
