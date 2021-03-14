@@ -1,14 +1,14 @@
 import './css.css'
-import { useState, Suspense, useRef } from "react";
-import Screencap from './assets/elyucateco.jpg'
+import { useState, Suspense } from "react";
+// import Screencap from './assets/elyucateco.jpg'
 // import ThreeScene from './components/cube2'
-import { Canvas, useLoader, useFrame } from "react-three-fiber";
+import { Canvas, useLoader } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Head from './facefinal.glb'
 import Laptop from './laptopweather.glb'
 import Lights from './components/lights'
 import { useSpring, animated } from 'react-spring/three'
-import * as THREE from "three";
+// import * as THREE from "three";
 
 
 
@@ -19,15 +19,15 @@ export default function App2() {
 
   const [about, setAbout] = useState()
   const [portfolio, setPortfolio] = useState()
-  const [project, setProject] = useState(Head)
+  // const [project, setProject] = useState(Head)
   const [active, setActive] = useState()
-  const vertices = [
-    [-1, 0, 0],
-    [0, 1, 0],
-    [1, 0, 0],
-    [0, -1, 0],
-    [-1, 0, 0],
-  ];
+  // const vertices = [
+  //   [-1, 0, 0],
+  //   [0, 1, 0],
+  //   [1, 0, 0],
+  //   [0, -1, 0],
+  //   [-1, 0, 0],
+  // ];
   const { color, pos, ...props } = useSpring({
     color: active ? "hotpink" : "white",
     pos: active ? [0, -2, 2] : [0, -2, 2],
@@ -43,7 +43,7 @@ export default function App2() {
 
   // function
   function SpinningHead() {
-    const gltf = useLoader(GLTFLoader, project)
+    const gltf = useLoader(GLTFLoader, Head)
     return (
       <group>
         {/* <animated.line position={pos}>
