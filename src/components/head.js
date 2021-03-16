@@ -13,19 +13,19 @@ import * as THREE from "three/src/Three";
 
 export default function Head() {
 
-      const [active, setActive] = useState();
+      const [active, setActive] = useState(false);
 
       const { pos, ...props } = useSpring({
         // color: active ? "pink" : "white",
         // pos: active ? [0, -2, 2] : [0, -2, 2],
-        position: active ? [0, 0, 0.6] : [0, 0, 1],
-        scale: active ? [0.55, 0.55, 0.55] : [1.1, 1.1, 1.1],
-        "material-opacity": active ? 0.2 : 0.9,
+        position: active ? [0.4, 0, 1] : [-.14, 0, 0.6],
+        scale: active ?  [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55] ,
+        "material-opacity": active ? 0.9 : 0.2,
 
         rotation: active
           ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
-            [0.2, 0.4, 0]
-          : [0.1, -3.86, 3],
+           [0.1, -3.86, 3]
+          :  [0.2, 0.4, 0],
         config: {
           mass: 1500,
           tension: 9000,
@@ -35,16 +35,16 @@ export default function Head() {
       });
 
       const { ...bingus } = useSpring({
-        color: active ? "hotpink" : "white",
+        // color: active ? "hotpink" : "white",
         // pos: active ? [10, -111, 2] : [10, -1111, 2111],
-        position: active ? [0, 0, 0] : [0, -0.4, 0],
-        scale: active ? [1, 1, 1] : [2, 2, 2],
+        position: active ? [0, 0, 0] : [0, -0.46, 0],
+        scale: active ? [2, 2, 2] : [1, 1, 1],
         // "material-opacity": active ? 0.6 : 0.25,
 
         rotation: active
           ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
-            [0.2, 0.4, 0]
-          : [0.1, -13.06, 0],
+           [0.1, -13.16, 0]
+           : [0.2, 0.4, 0],
         config: {
           mass: 500,
           tension: 1000,
