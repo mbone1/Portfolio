@@ -1,29 +1,31 @@
 // import "./css.css";
-import { useState, Suspense } from "react";
+import { useState, Suspense, useRef } from "react";
 // import Screencap from './assets/elyucateco.jpg'
 // import ThreeScene from './components/cube2'
-import { Canvas, useLoader } from "react-three-fiber";
+import { Canvas, useLoader, useFrame } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import HeadModel from "./facefinal.glb";
 import Laptop from "./laptopweather.glb";
 import Lights from "./lights";
-import { useSpring, animated as a } from "react-spring/three";
+import { useSpring, animated as a} from "react-spring/three";
 import { animated, useSpring as uS } from "react-spring";
 import * as THREE from "three/src/Three";
 
 export default function Head() {
-
-      const [active, setActive] = useState(false);
+    const primRef = useRef()
+    const [active, setActive] = useState(false); //used to store animation state
+    
+    // useFrame(() => {
+    //     primRef.current.rotation.y +=1
+    // })
+    
 
       const { pos, ...props } = useSpring({
-        // color: active ? "pink" : "white",
-        // pos: active ? [0, -2, 2] : [0, -2, 2],
-        position: active ? [0.4, 0, 1] : [-.14, 0, 0.6],
-        scale: active ?  [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55] ,
-        "material-opacity": active ? 0.9 : 0.2,
-
-        rotation: active
-          ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
+          position: active ? [0.4, 0, 1] : [-.10, 0, 0.75],
+          scale: active ?  [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55] ,
+          "material-opacity": active ? 0.9 : 0.2,
+          rotation: active
+          ? 
            [0.1, -3.86, 3]
           :  [0.2, 0.4, 0],
         config: {
@@ -33,48 +35,49 @@ export default function Head() {
           precision: 0.00001,
         },
       });
+   
 
-      const { ...bingus } = useSpring({
-        // color: active ? "hotpink" : "white",
-        // pos: active ? [10, -111, 2] : [10, -1111, 2111],
-        position: active ? [0, 0, 0] : [0, -0.46, 0],
-        scale: active ? [2, 2, 2] : [1, 1, 1],
-        // "material-opacity": active ? 0.6 : 0.25,
 
-        rotation: active
-          ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
-           [0.1, -13.16, 0]
-           : [0.2, 0.4, 0],
-        config: {
-          mass: 500,
-          tension: 1000,
-          friction: 1000,
-          precision: 0.00001,
-        },
-      });
+      const { ...headProps } = useSpring({
+          position: active ? [-.1, -0.13, -.5] : [0, -0.43, 0],
+          scale: active ? [2, 2, 2] : [1, 1, 1],
+          rotation: active
+            ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
+             [0, -13.16, THREE.Math.degToRad(1)]
+             : [0.2, 0.4, 0],
+          config: {
+            mass: 500,
+            tension: 1000,
+            friction: 1000,
+            precision: 0.00001,
+          },
+        }); //used to animate the head spinning.
+        
+       
+
 
       function SpinningHead() {
         const gltf = useLoader(GLTFLoader, HeadModel);
+        // function Spongus() {
+        //   setActive(!active);
+        //   }
+          return (
+            <group>
+                  <a.primitive
+                    //   ref={primRef}
+                onClick={(e) => setActive(!active)}
+                object={gltf.scene}
+                attach="geometry"
+                args={[2, 2, 2]}
+                {...headProps}
+              />
+            </group>
+          );
+      }
 
-        function Spongus() {
-        //   console.log(about);
-          setActive(!active);
-          }
           
           
 
-        return (
-          <group>
-            <a.primitive
-              onClick={(e) => Spongus()}
-              object={gltf.scene}
-              attach="geometry"
-              args={[2, 2, 2]}
-              {...bingus}
-            />
-          </group>
-        );
-    }
      function Box() {
        return (
          <a.mesh {...props}>

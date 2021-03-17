@@ -1,41 +1,67 @@
-import React from "react";
-import Draggable from "react-draggable";
-import portrait from "../assets/portrait.jpg";
-import { useSpring, animated } from "react-spring";
+import { useState } from "react";
+import { animated, useSpring } from "react-spring";
+import Head from "./head";
 
 
 export default function About() {
-  const fadeIn = useSpring({
-  opacity: 1,
-  from: { opacity: 0 },
-})
-  
-  return (
+    const [about, setAbout] = useState(false);
+
+
+    const colorChange = useSpring({
+      reverse: about,
+      reset: about,
+      from: { color: "grey" },
+      to: { color: "white" },
+      config: { duration: 1000 },
+    });
     
-    <animated.div id="about1">
-      <animated.figure className="is-fullwidth">
-        <Draggable>
-            <animated.img style={fadeIn} id="img2" src={portrait} alt="Photograph of Matt Bonneville " />
-        </Draggable>
-        {/* <button
-                          className="button is-outlined is-dark is-light fas fa-paint-brush"
-                          id="paint"></button>
-                        <button
-                          className="button is-outlined is-dark is-light fas fa-camera-retro"
-                          id="camera"></button> */}
-      </animated.figure>
-      <Draggable>
-        <div className="limitWidth">
-        <animated.p style={fadeIn} className="description">
-          <strong>
-            {" "}
-            I'm Matt. I like tea, video games and problem solving. I'm a graduate of University of Arizona's full stack web development bootcamp.
-          </strong>
-          </animated.p>
-          </div>
-      </Draggable>
-    </animated.div>
-  
-   
-  );
+    const { size, ...springProps } = useSpring({
+      reverse: about,
+      // reset: about,
+      // size: about ? "0%" : "100%",
+      opacity: about ? 0 : 1,
+      // delay: 500,
+      config: { mass: 5, tension: 210, friction: 50, precision: 0.000001 },
+      from: {
+        size: "0%",
+        color: "black",
+        opacity: 0,
+      },
+      to: {
+        color: "white",
+        size: "100%",
+        borderTop: "2px solid pink",
+        opacity: 1,
+      },
+    });
+
+
+    return (
+    <>
+    <animated.h2 style={colorChange} onClick={() => setAbout(!about)}>
+        About
+    </animated.h2>
+      <animated.div style={{ height: size, width: size, ...springProps }}>
+        <Head />
+        {/* <animated.div className="i"> */}
+        {/* <div style={{ height: "100%", width: "100%" }}> */}
+          <h4 style={{ color: "pink" }}>Profession:</h4>
+          <span>Full-stack web developer </span>
+          <h4 style={{ color: "pink" }}>Location:</h4>
+          <span>Arizona, USA</span>
+          <h4 style={{ color: "pink" }}>Likes:</h4>
+          <span style={{ color: "green" }}>Tea</span>
+          <h4 style={{ color: "pink" }}>Dislikes:</h4>
+          <span style={{ color: "red" }}>Sand</span>
+          <h4 style={{ color: "pink" }}>Contact:</h4>
+          <span>m.bonnev9@gmail.com</span>
+          <br></br>
+          <span>508-768-9911</span>
+          <h4 style={{ color: "pink" }}>Links:</h4>
+          <p>m.bonnev9@gmail.com</p>
+          {/* <span>508-768-9911</span>
+          <span>508-768-9911</span> */}
+        {/* </div> */}
+      </animated.div>
+      </>)
 }
