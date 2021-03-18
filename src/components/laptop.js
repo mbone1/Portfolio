@@ -42,6 +42,10 @@ export default function Laptop() {
       },
     }); //used to animate the head spinning.
         
+    const { hover } = useSpring({
+        scale: [1.8, 1.8, 1.8]
+    })
+
     function SpinningLaptop() {
         const gltf = useLoader(GLTFLoader, currentModel);
         return (
@@ -50,6 +54,7 @@ export default function Laptop() {
                
                     onClick={(e) => setActive(!active)}
                     object={gltf.scene}
+                    onPointerOver={hover}
                     attach="geometry"
                     args={[2, 2, 2]}
                     {...headProps}

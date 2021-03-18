@@ -8,18 +8,18 @@ export default function About() {
 
 
     const colorChange = useSpring({
-      reverse: about,
-      reset: about,
+      reverse: !about,
+      // reset: !about,
       from: { color: "grey" },
       to: { color: "white" },
       config: { duration: 1000 },
     });
     
     const { size, ...springProps } = useSpring({
-      reverse: about,
+      reverse: !about,
       // reset: about,
       // size: about ? "0%" : "100%",
-      opacity: about ? 0 : 1,
+      opacity: !about ? 1 : 0,
       // delay: 500,
       // cursor: "pointer",
       config: { mass: 5, tension: 210, friction: 50, precision: 0.000001 },

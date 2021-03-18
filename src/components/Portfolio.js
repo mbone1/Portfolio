@@ -8,18 +8,18 @@ export default function Portfolio() {
   const [portfolio, setPortfolio] = useState(false);
 
   const colorChange = useSpring({
-    reverse: portfolio,
-    reset: portfolio,
+    reverse: !portfolio,
+    // reset: portfolio,
     from: { color: "grey" },
     to: { color: "white" },
     config: { duration: 1000 },
   });
 
   const { size, ...springProps } = useSpring({
-    reverse: portfolio,
-    reset: portfolio,
+    reverse: !portfolio,
+    // reset: portfolio,
     // size: portfolio ? "0%" : "100%",
-    opacity: portfolio ? 0 : 1,
+    opacity: !portfolio ? 0 : 1,
     // delay: 500,
     config: { mass: 5, tension: 210, friction: 50, precision: 0.000001 },
     from: {
