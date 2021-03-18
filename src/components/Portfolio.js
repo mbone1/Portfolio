@@ -41,7 +41,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <animated.h2 style={colorChange} onClick={() => setPortfolio(!portfolio)}>
+      <animated.h2 className="hov"style={colorChange} onClick={() => setPortfolio(!portfolio)}>
         Portfolio
       </animated.h2>
       <animated.div style={{ height: size, width: size, ...springProps }}>

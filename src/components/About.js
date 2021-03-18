@@ -21,6 +21,7 @@ export default function About() {
       // size: about ? "0%" : "100%",
       opacity: about ? 0 : 1,
       // delay: 500,
+      // cursor: "pointer",
       config: { mass: 5, tension: 210, friction: 50, precision: 0.000001 },
       from: {
         size: "0%",
@@ -38,7 +39,7 @@ export default function About() {
 
     return (
     <>
-    <animated.h2 style={colorChange} onClick={() => setAbout(!about)}>
+    <animated.h2 className="hov" style={colorChange} onClick={() => setAbout(!about)}>
         About
     </animated.h2>
       <animated.div style={{ height: size, width: size, ...springProps }}>

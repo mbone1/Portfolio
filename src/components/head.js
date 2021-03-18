@@ -5,11 +5,24 @@ import HeadModel from "./facefinal.glb";
 import Lights from "./lights";
 import { useSpring, animated as a} from "react-spring/three";
 import * as THREE from "three/src/Three";
+import { useProgress, Html } from "@react-three/drei";
+
 
 
 export default function Head() {
     const [active, setActive] = useState(false); //used to store animation state
     
+    function Loader() {
+      const { progress } = useProgress();
+
+      return (
+        <Html center>
+          <h1>{Math.trunc(progress)} % loaded</h1>
+        </Html>
+      );
+    }
+
+
     const { pos, ...props } = useSpring({
         position: active ? [0.4, 0, 1] : [-.10, 0, 0.75],
         scale: active ?  [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55] ,
@@ -122,7 +135,7 @@ export default function Head() {
       return (
         <div style={{ height: "400px" }}>
           <Canvas camera={{ position: [0, 0, 4] }}>
-            <Suspense fallback={<Box />}>
+            <Suspense fallback={<Loader />}>
               <Box />
               <Box3 />
               <Box2 />

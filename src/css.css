@@ -9,6 +9,10 @@ body {
     height: auto
 }
 
+.hov {
+    cursor: pointer;
+}
+
 
 /* 
 .i {

@@ -1,12 +1,14 @@
 import { useState, Suspense } from "react";
 import { Canvas, useLoader } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import laptop from "./laptopweather.glb";
 import Lights from "./lights";
 import { useSpring, animated as a } from "react-spring/three";
 import * as THREE from "three/src/Three";
+import laptop from "./laptopweather.glb";
 import laptop2 from './laptopgeotracker.glb'
 import laptop3 from './laptopworkdayscheduler.glb'
+import { useProgress, Html } from '@react-three/drei'
+
 
 export default function Laptop() {
     const [active, setActive] = useState(false); //used to store animation state
@@ -15,6 +17,15 @@ export default function Laptop() {
         setActive(!active)
         setCurrentModel(model)
     }
+
+    function Loader() {
+         const {
+           progress
+         } = useProgress();
+        
+        return <Html center><h1>{Math.trunc(progress)} % loaded</h1></Html>;
+    }
+
 
     const { ...headProps } = useSpring({
       position: [-0.05, -0.53, -0.1],
@@ -36,6 +47,7 @@ export default function Laptop() {
         return (
             <group>
                 <a.primitive
+               
                     onClick={(e) => setActive(!active)}
                     object={gltf.scene}
                     attach="geometry"
@@ -67,7 +79,7 @@ export default function Laptop() {
             <button onClick={()=> modelChange(laptop2)}>geotracker</button>
             <button onClick={()=> modelChange(laptop3)}>workdayscheduler</button>
             <Canvas camera={{ position: [0, 0, 4] }}>
-                <Suspense fallback={<Box />}>
+                <Suspense fallback={<Loader/> }>
                     <SpinningLaptop />
                 </Suspense>
                 <Lights />
