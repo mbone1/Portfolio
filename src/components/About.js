@@ -4,14 +4,15 @@ import Head from "./head";
 
 
 export default function About() {
-    const [about, setAbout] = useState(false);
+  const [about, setAbout] = useState(false);
+  
 
 
     const colorChange = useSpring({
       reverse: !about,
       // reset: !about,
-      from: { color: "grey" },
-      to: { color: "white" },
+      from: {color: "grey"},
+      to: {color: "white"},
       config: { duration: 1000 },
     });
     

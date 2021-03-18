@@ -62,21 +62,6 @@ export default function Laptop() {
             </group>
         );
     }
-   
-    function Box() {
-        return (
-            <a.mesh>
-                <boxBufferGeometry attach="geometry" args={[3.75, 3.75, 3.75]} />
-                <meshStandardMaterial
-                    color="hotpink"
-                    attach="material"
-                    wireframe={true}
-                    transparent
-                    opacity={0.3}
-                />
-            </a.mesh>
-        );
-    }
 
     return (
         <div style={{ height: "400px" }}>

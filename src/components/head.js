@@ -11,7 +11,8 @@ import { useProgress, Html } from "@react-three/drei";
 
 export default function Head() {
     const [active, setActive] = useState(false); //used to store animation state
-    
+    const [hover, setHover] = useState(false);
+
     function Loader() {
       const { progress } = useProgress();
 
@@ -22,12 +23,16 @@ export default function Head() {
       );
     }
 
+    function Logger(burrito) {
+        setHover(burrito)
+        console.log(hover)
+    }
 
     const { pos, ...props } = useSpring({
-        position: active ? [0.4, 0, 1] : [-.10, 0, 0.75],
-        scale: active ?  [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55] ,
-        "material-opacity": active ? 0.9 : 0.2,
-        rotation: active
+        position: hover ? [0.4, 0, 1] : [-.10, 0, 0.75],
+        scale: hover ?  [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55] ,
+        "material-opacity": hover ? 0.9 : 0.2,
+        rotation: hover
         ? 
          [0.1, -3.86, 3]
         :  [0.2, 0.4, 0],
@@ -40,39 +45,45 @@ export default function Head() {
     });
 
     const { ...headProps } = useSpring({
-        position: active ? [-.1, -0.13, -.5] : [0, -0.43, 0],
-        scale: active ? [2, 2, 2] : [1, 1, 1],
-        rotation: active
-          ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
-           [0, -13.16, THREE.Math.degToRad(1)]
-           : [0.2, 0.4, 0],
-        config: {
-          mass: 500,
-          tension: 1000,
-          friction: 1000,
-          precision: 0.00001,
-        },
-      }); //used to animate the head spinning.
-   
-      function SpinningHead() {
-        const gltf = useLoader(GLTFLoader, HeadModel);
-        // function Spongus() {
-        //   setActive(!active);
-        //   }
-          return (
-            <group>
-                  <a.primitive
-                    //   ref={primRef}
-                onClick={(e) => setActive(!active)}
-                object={gltf.scene}
-                attach="geometry"
-                args={[2, 2, 2]}
-                {...headProps}
-                  />
-                  {/* <span>asdf</span> */}
-            </group>
-          );
-      }
+      position: hover ? [-0.1, -0.13, -0.5] : [0, -0.43, 0],
+      scale: hover ? [2, 2, 2] : [1, 1, 1],
+      rotation: hover
+         ?  [0, -13.16, THREE.Math.degToRad(1)]
+             : [0.2, 0.4, 0],
+          // scale: hover ? [1.3, 1.3, 1.3] : [1, 1, 1],
+          // rotation: active
+          //   ?
+          //    [0, -13.16, THREE.Math.degToRad(1)]
+          //    : [0.2, 0.4, 0],
+          config
+        : {
+            mass: 500,
+            tension: 1000,
+            friction: 1000,
+            precision: 0.00001,
+          },
+    }); //used to animate the head spinning.
+
+    function SpinningHead() {
+      const gltf = useLoader(GLTFLoader, HeadModel);
+      // function Spongus() {
+      //   setActive(!active);
+      //   }
+        return (
+          <group>
+              <a.primitive
+              onPointerOver={e => Logger(true)}
+              onPointerOut={e=> Logger(false)}
+              onClick={(e) => setActive(!active)}
+              object={gltf.scene}
+              attach="geometry"
+              args={[2, 2, 2]}
+              {...headProps}
+                />
+                {/* <span>asdf</span> */}
+          </group>
+        );
+    }
 
       function Box() {
         return (
@@ -87,7 +98,8 @@ export default function Head() {
             />
           </a.mesh>
         );
-      }
+    }
+    
       function Box2() {
         return (
           <a.mesh {...props}>
@@ -102,7 +114,8 @@ export default function Head() {
             />
           </a.mesh>
         );
-      }
+    }
+    
       function Box3() {
         return (
           <a.mesh {...props}>
@@ -116,8 +129,8 @@ export default function Head() {
             />
           </a.mesh>
         );
-      }
-
+    }
+    
       function Box4() {
         return (
           <a.mesh {...props}>
@@ -132,8 +145,10 @@ export default function Head() {
           </a.mesh>
         );
       }
+
       return (
-        <div style={{ height: "400px" }}>
+          <div style={{ height: "400px" }}>
+            <button onClick={()=>setActive(!active)}>spin</button>
           <Canvas camera={{ position: [0, 0, 4] }}>
             <Suspense fallback={<Loader />}>
               <Box />
@@ -148,6 +163,12 @@ export default function Head() {
       );    
   }
         
+
+    
+
+    
+    
+    
   
   
   
