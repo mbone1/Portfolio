@@ -13,7 +13,7 @@ export default function Lights (){
   return (
     <group>
       <FakeSphere />
-      <ambientLight intensity={0.9} />
+      <ambientLight intensity={0.99} />
       <pointLight intensity={1.12} position={[0, 0, 0]} />
     </group>
   );

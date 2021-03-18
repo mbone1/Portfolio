@@ -1,62 +1,38 @@
 import { useState, Suspense } from "react";
-// import Screencap from './assets/elyucateco.jpg'
-// import ThreeScene from './components/cube2'
 import { Canvas, useLoader } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import HeadModel from "./facefinal.glb";
 import laptop from "./laptopweather.glb";
 import Lights from "./lights";
 import { useSpring, animated as a } from "react-spring/three";
-import { animated, useSpring as uS } from "react-spring";
 import * as THREE from "three/src/Three";
+import laptop2 from './laptopgeotracker.glb'
+import laptop3 from './laptopworkdayscheduler.glb'
 
 export default function Laptop() {
-
     const [active, setActive] = useState(false); //used to store animation state
-    
-    
-
-    const { pos, ...props } = useSpring({
-        position: active ? [0.4, 0, 1] : [-.10, 0, 0.75],
-        scale: active ? [1.1, 1.1, 1.1] : [0.55, 0.55, 0.55],
-        "material-opacity": active ? 0.9 : 0.2,
-        rotation: active
-            ?
-            [0.1, -3.86, 3]
-            : [0.2, 0.4, 0],
-        config: {
-            mass: 1500,
-            tension: 9000,
-            friction: 3000,
-            precision: 0.00001,
-        },
-    });
-   
-
+    const [currentModel, setCurrentModel] = useState(laptop)
+    function modelChange(model) {
+        setActive(!active)
+        setCurrentModel(model)
+    }
 
     const { ...headProps } = useSpring({
-        position: active ? [-.1, -0.13, -.5] : [0, -0.43, 0],
-        scale: active ? [2, 2, 2] : [1, 1, 1],
-        rotation: active
-            ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
-            [0, -13.16, THREE.Math.degToRad(1)]
-            : [0.2, 0.4, 0],
-        config: {
-            mass: 500,
-            tension: 1000,
-            friction: 1000,
-            precision: 0.00001,
-        },
+      position: [-0.05, -0.53, -0.1],
+      scale: active ? [1.7, 1.7, 1.7] : [1.7, 1.7, 1.7],
+      rotation: active
+        ? // ? [THREE.Math.degToRad(1080), 0, THREE.Math.degToRad(45)]
+          [0.3, -14.16, 5.5]
+        : [0.3, THREE.Math.degToRad(270), 5.5],
+      config: {
+        mass: 10,
+        tension: 5000,
+        friction: 1000,
+        precision: 0.00001,
+      },
     }); //used to animate the head spinning.
         
-       
-
-
     function SpinningLaptop() {
-        const gltf = useLoader(GLTFLoader, laptop);
-        // function Spongus() {
-        //   setActive(!active);
-        //   }
+        const gltf = useLoader(GLTFLoader, currentModel);
         return (
             <group>
                 <a.primitive
@@ -69,13 +45,10 @@ export default function Laptop() {
             </group>
         );
     }
-
-          
-          
-
+   
     function Box() {
         return (
-            <a.mesh {...props}>
+            <a.mesh>
                 <boxBufferGeometry attach="geometry" args={[3.75, 3.75, 3.75]} />
                 <meshStandardMaterial
                     color="hotpink"
@@ -87,66 +60,34 @@ export default function Laptop() {
             </a.mesh>
         );
     }
-    function Box4() {
-        return (
-            <a.mesh {...props}>
-                <boxBufferGeometry attach="geometry" args={[4.5, 4.5, 4.5]} />
-                <meshStandardMaterial
-                    color="lightblue"
-                    attach="material"
-                    wireframe={true}
-                    transparent
-                    opacity={0.3}
-                />
-            </a.mesh>
-        );
-    }
-    function Box3() {
-        return (
-            <a.mesh {...props}>
-                <boxBufferGeometry attach="geometry" args={[4.0, 4.0, 4.0]} />
-                <meshStandardMaterial
-                    color="white"
-                    attach="material"
-                    wireframe={true}
-                    transparent
-                    opacity={0.3}
-                />
-            </a.mesh>
-        );
-    }
-    function Box2() {
-        return (
-            <a.mesh {...props}>
-                <boxBufferGeometry attach="geometry" args={[4.25, 4.25, 4.25]} />
-                {/* <boxBufferGeometry attach="geometry" args={[4.5, 4.5, 4.5]}/> */}
-                <meshStandardMaterial
-                    color="orange"
-                    attach="material"
-                    wireframe={true}
-                    transparent
-                    opacity={0.3}
-                />
-            </a.mesh>
-        );
-    }
 
     return (
         <div style={{ height: "400px" }}>
+            <button onClick={()=> modelChange(laptop)}>lplan</button>
+            <button onClick={()=> modelChange(laptop2)}>geotracker</button>
+            <button onClick={()=> modelChange(laptop3)}>workdayscheduler</button>
             <Canvas camera={{ position: [0, 0, 4] }}>
-                {/* <Environment /> */}
-                {/* <ambientLight color="lightblue" /> */}
-
                 <Suspense fallback={<Box />}>
-                    <Box />
-                    <Box3 />
-                    <Box2 />
-                    <Box4 />
                     <SpinningLaptop />
                 </Suspense>
-
                 <Lights />
             </Canvas>
+            <br></br>
         </div>
-    );
+        );
 }
+
+       
+
+
+
+          
+          
+
+   
+
+              
+
+                   
+
+        

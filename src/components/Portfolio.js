@@ -48,19 +48,13 @@ export default function Portfolio() {
         <Laptop />
         {/* <animated.div className="i"> */}
         {/* <div style={{ height: "100%", width: "100%" }}> */}
-          <h4 style={{ color: "pink" }}>Profession:</h4>
-          <span>Full-stack web developer </span>
-          <h4 style={{ color: "pink" }}>Location:</h4>
-          <span>Arizona, USA</span>
-          <h4 style={{ color: "pink" }}>Likes:</h4>
-          <span style={{ color: "green" }}>Tea</span>
-          <h4 style={{ color: "pink" }}>Dislikes:</h4>
-          <span style={{ color: "red" }}>Sand</span>
-          <h4 style={{ color: "pink" }}>Contact:</h4>
-          <span>m.bonnev9@gmail.com</span>
-          <br></br>
-          <span>508-768-9911</span>
+        <h3 style={{ color: "lightblue" }}>L-plan</h3>
+          <h4 style={{ color: "pink" }}>Description:</h4>
+          <span>CRUD Lesson plan application</span>
+          <h4 style={{ color: "pink" }}>Technologies:</h4>
+          <span>React.js, SCSS</span>
           <h4 style={{ color: "pink" }}>Links:</h4>
+          <span>Tea</span>
         {/* </div> */}
       </animated.div>
     </>
