@@ -4,8 +4,10 @@ import Laptop from "./laptop";
 
 
 
+
 export default function Portfolio() {
-  const [portfolio, setPortfolio] = useState(false);
+  const [portfolio, setPortfolio] = useState();
+
 
   const colorChange = useSpring({
     reverse: !portfolio,
@@ -21,9 +23,9 @@ export default function Portfolio() {
     // size: portfolio ? "0%" : "100%",
     opacity: !portfolio ? 0 : 1,
     // delay: 500,
-    config: { mass: 5, tension: 210, friction: 50, precision: 0.000001 },
+    // config: { mass: 1, tension: 2, friction: 5 },
+    config: { duration: 1000 },
     from: {
-      // size:"0%",
       height: "0%",
       width: "0%",
       color: "black",
@@ -31,7 +33,6 @@ export default function Portfolio() {
     },
     to: {
       color: "white",
-      // size: "100%",
       height: "100%",
       width: "100%",
       borderTop: "2px solid pink",
@@ -41,21 +42,14 @@ export default function Portfolio() {
 
   return (
     <>
-      <animated.h2 className="hov"style={colorChange} onClick={() => setPortfolio(!portfolio)}>
+      <animated.h2
+        className="hov"
+        style={colorChange}
+        onClick={() => setPortfolio(!portfolio)}>
         Portfolio
       </animated.h2>
       <animated.div style={{ height: size, width: size, ...springProps }}>
         <Laptop />
-        {/* <animated.div className="i"> */}
-        {/* <div style={{ height: "100%", width: "100%" }}> */}
-        <h3 style={{ color: "lightblue" }}>L-plan</h3>
-          <h4 style={{ color: "pink" }}>Description:</h4>
-          <span>CRUD Lesson plan application</span>
-          <h4 style={{ color: "pink" }}>Technologies:</h4>
-          <span>React.js, SCSS</span>
-          <h4 style={{ color: "pink" }}>Links:</h4>
-          <span>Tea</span>
-        {/* </div> */}
       </animated.div>
     </>
   );

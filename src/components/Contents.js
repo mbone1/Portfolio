@@ -5,13 +5,13 @@ import '../css.css'
 export default function Contents() {
   return (
     <div className="container-fluid">
-      <div style={{ height: "47%" }}>
+      <div style={{ height: "60%" }}>
         <br></br>
         <About />
         <br></br>
         <Portfolio />
         <br></br>
-    </div>
+      </div>
     </div>
   );
 }
