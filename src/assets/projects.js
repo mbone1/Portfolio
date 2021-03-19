@@ -10,7 +10,7 @@ const projects = [
     name: "L-Plan",
     url: "https://github.com/scottdouglas238/Lesson_Planner",
     deployedUrl: "https://sheltered-hollows-22179.herokuapp.com/",
-    technologies: "React.js, Express, Node.js",
+    technologies: "React.js, Express, Node.js, MongoDB, Bulma, Sass",
     description: "MERN Stack, CRUD application for lesson plans",
     model: lplan
   },
@@ -21,7 +21,7 @@ const projects = [
     deployedUrl: "https://react-employee-db.netlify.app/",
     description:
       "Employee Database with various filtering capabilities",
-    technologies: "React.js",
+    technologies: "React.js, JS, CSS",
     model: employee
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     deployedUrl: "https://gentle-falls-82429.herokuapp.com/",
     description:
       "PWA Budget Application",
-    technologies: "",
+    technologies: "Express, Mongoose, JS",
     model: budget
   },
   {
@@ -50,7 +50,7 @@ const projects = [
       url: "https://github.com/mbone1/eatdaburrito",
       deployedUrl: "https://safe-garden-94512.herokuapp.com/",
       description: "Looking for a way to keep track of the burritos you've eaten? Look no further!",
-      technologies: "handlebars.js",
+      technologies: "Handlebars.js, Express, MySQL",
       model: burrito
     }
     //broken
