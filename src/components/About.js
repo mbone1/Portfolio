@@ -69,20 +69,39 @@ export default function About() {
         <br></br>
         <span>508-768-9911</span>
         <h4 style={{ color: "pink" }}>Technologies:</h4>
-        <i className="fab fa-react fa-3x"></i>
-        <i className="fab fa-js fa-3x"></i>
-        <i className="fab fa-node fa-3x"></i>
-        <i className="fab fa-sass fa-3x"></i>
+        <span>
+          <i className="fab fa-react fa-3x"></i>&nbsp;
+        </span>
+        <span>
+          <i className="fab fa-node fa-3x"></i>
+          &nbsp;
+        </span>
+        <span>
+          <i className="fab fa-js fa-3x"></i>
+          &nbsp;
+        </span>
+        <span> three.js &nbsp;</span>
+        <span>
+          <i className="fab fa-sass fa-3x"></i>&nbsp;
+        </span>
+        <span>
+          <i class="fab fa-bootstrap fa-3x"></i>
+          &nbsp;
+        </span>
         <h4 style={{ color: "pink" }}>Links:</h4>
         <span
           className="hov"
           onClick={() => openInNewTab("https://github.com/mbone1")}>
-        <i className="fab fa-github fa-3x"></i>
-          </span>
+          <i className="fab fa-github fa-3x"></i>&nbsp;
+        </span>
         <span
           className="hov"
-          onClick={() => openInNewTab("https://www.linkedin.com/in/matthew-bonneville-944a431a9/")}>
-        <i className="fab fa-linkedin fa-3x"></i>
+          onClick={() =>
+            openInNewTab(
+              "https://www.linkedin.com/in/matthew-bonneville-944a431a9/"
+            )
+          }>
+          <i className="fab fa-linkedin fa-3x"></i>&nbsp;
         </span>
       </animated.div>
     </>
