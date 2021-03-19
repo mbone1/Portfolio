@@ -6,6 +6,7 @@ import { useSpring, animated as a } from "react-spring/three";
 import * as THREE from "three/src/Three";
 import { useProgress, Html } from '@react-three/drei'
 import projects from "../assets/projects";
+import '../css.css'
 
 
 

@@ -56,8 +56,6 @@ export default function About() {
       </animated.h2>
       <animated.div style={{ height: size, width: size, ...springProps }}>
         <Head />
-        {/* <animated.div className="i"> */}
-        {/* <div style={{ height: "100%", width: "100%" }}> */}
         <h4 style={{ color: "pink" }}>Profession:</h4>
         <span>Full-stack web developer </span>
         <h4 style={{ color: "pink" }}>Location:</h4>

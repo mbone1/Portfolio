@@ -120,11 +120,16 @@ export default function Head() {
       }
 
       return (
-          <div style={{ height: "400px" }}>
-            <button onClick={()=>setActive(!active)}>spin</button>
+        <div style={{ height: "400px" }}>
+          <button
+            type="button"
+            className="black"
+            onClick={() => setActive(!active)}>
+            spin
+          </button>
           <Canvas camera={{ position: [0, 0, 4] }}>
-              <Suspense fallback={<Loader />}>
-              <Box  />
+            <Suspense fallback={<Loader />}>
+              <Box />
               <Box2 />
               <Box3 />
               <Box4 />
