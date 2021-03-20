@@ -5,7 +5,7 @@ import '../css.css'
 export default function Contents() {
   return (
     <div className="container-fluid">
-      <div style={{ height: "60%" }}>
+      <div style={{ height: "60.5%" }}>
         <br></br>
         <About />
         <br></br>
