@@ -67,7 +67,7 @@ export default function About() {
         <h4 style={{ color: "pink" }}>Contact:</h4>
         <span>m.bonnev9@gmail.com</span>
         <br></br>
-        <span>508-768-9911</span>
+        <span>(814) 503-0343</span>
         <h4 style={{ color: "pink" }}>Technologies:</h4>
         <span>
           <i className="fab fa-react fa-3x"></i>&nbsp;
